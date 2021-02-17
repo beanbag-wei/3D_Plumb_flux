@@ -90,10 +90,10 @@ dthetadz =  c_diff(theta, -sclhgt*loglevel, 1, False)
 NN = (gc*(lev_tmp/1000.)**0.286)/sclhgt * dthetadz #Brunt-Vaisala
 
 psidev = rmv_mean(g)*ga/f_tmp #QG streamfunction 
-dpsidevdlon = c_diff(psidev, lon, 3, True)
-dpsidevdlonlon = c_diff(dpsidevdlon, lon, 3, True) 
-dpsidevdlat = c_diff(psidev, lat, 2, False)
-dpsidevdlonlat = c_diff(dpsidevdlon, lat, 2, False)
+dpsidevdlon = c_diff(psidev, lon*pi/180, 3, True)
+dpsidevdlonlon = c_diff(dpsidevdlon, lon*pi/180, 3, True) 
+dpsidevdlat = c_diff(psidev, lat*pi/180, 2, False)
+dpsidevdlonlat = c_diff(dpsidevdlon, lat*pi/180, 2, False)
 dpsidevdz = c_diff(psidev, -sclhgt*loglevel, 1, False)
 dpsidevdlonz = c_diff(dpsidevdlon, -sclhgt*loglevel, 1, False)
 
