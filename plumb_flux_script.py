@@ -71,7 +71,8 @@ print 'calculation'
 #constants
 ga = 9.80665
 sclhgt=8000.
-loglevel = np.log(lev/1000.)
+# the formnulation of loglevel is log(p), where the p is equal to pressure/1000mb
+loglevel = np.log(lev/1000.) 
 gc = 290.
 a = 6.37122e06 
 pi = np.pi
